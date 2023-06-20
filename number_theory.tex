@@ -1,0 +1,38 @@
+%!TeX program = lualatex
+
+\documentclass{ctexbook}
+\usepackage{fontspec}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{enumitem}
+\newlist{axiomenum}{enumerate}{1}
+\setlist[axiomenum]{font=\normalfont\bfseries, label=(\roman*)}
+
+%%%%% ctex settings
+\ctexset{
+	section={
+	  format=\Large\bfseries\centering,
+	  name={\S},
+	  number=\arabic{section}
+	 },
+	subsection={
+			format=\large\bfseries,
+			name={,},
+			number=\arabic{section}.\arabic{subsection}
+		}
+}
+\renewcommand{\proofname}{\rm\bfseries{证: }\nopunct}
+\renewcommand{\qed}{\bfseries{证毕.}}
+
+\newtheorem{axiom}{公理}
+\newtheorem{theorem}{定理}
+
+
+\author{dax}
+\title{初等数论学习笔记}
+\date{2023年06月20日}
+
+\begin{document}
+\maketitle
+\include{chapter1}
+
+\end{document}

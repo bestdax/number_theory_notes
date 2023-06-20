@@ -1,0 +1,33 @@
+\chapter{整除理论}
+\section{自然数与整数}
+\subsection{基本性质}
+这一节里面的内容很基本，暂时略过。
+\subsection{最小自然数原理与数学归纳原理}
+\begin{axiom}[归纳原(公)理] 设S是N的一个子集，满足条件：
+	\begin{axiomenum}
+		\item $1 \in S$;
+		\item 如果 $n \in S$, 则 $n + 1 \in S$,
+	\end{axiomenum}
+	那么$S=N$.
+\end{axiom}
+
+\begin{theorem}[数学归纳法] 设$P(n)$是关于自然数$n$的一种性质或命题。如果
+	\begin{axiomenum}
+		\item 当$n=1$时，$P(1)$成立；
+		\item 由$P(n)$成立必可推出$P(n+1)$成立，
+	\end{axiomenum}
+	那么$P(n)$对所有自然数$n$成立。
+\end{theorem}
+
+\begin{proof}
+	设使$P(n)$成立的所有自然数$n$组成的集合是$S$。$S$是$N$的子集。由条件(i)知$1 \in S$;	由条件(ii), 若$n \in S$，则$n + 1 \in S$。所以由是好归纳原理知$S=N$。
+\end{proof}
+
+\begin{theorem}[最小自然数原理]
+	设$T$是$N$的一个非空子集。那么，必有$t_0 \in N$，使对任意的$t \in T$有$t_0 \le t$，即$t_0$是$T$中的最小自然数。
+\end{theorem}
+
+\begin{theorem}[最大自然数原理]
+设$M$是$N$的非空子集。若$M$有上界，即存在$a\in N$，使对任意的$m \in M$有$m \le a$，那么，必有$m_0 \in M$，使对任意的$m
+\in M$有$m \le m_0$，即$m_0$是$M$中的最大自然数。
+\end{theorem}
