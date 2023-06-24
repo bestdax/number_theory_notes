@@ -20,14 +20,29 @@
 \end{theorem}
 
 \begin{proof}
-	设使$P(n)$成立的所有自然数$n$组成的集合是$S$。$S$是$N$的子集。由条件(i)知$1 \in S$;	由条件(ii), 若$n \in S$，则$n + 1 \in S$。所以由是好归纳原理知$S=N$。
+	设使$P(n)$成立的所有自然数$n$组成的集合是$S$。$S$是$N$的子集。由条件(i)知$1 \in S$;	由条件(ii), 若$n \in S$，则$n + 1 \in S$。所以由归纳原理知$S=N$。
 \end{proof}
 
-\begin{theorem}[最小自然数原理]
+\begin{theorem}[最小自然数原理]\label{thrm:minint}
 	设$T$是$N$的一个非空子集。那么，必有$t_0 \in N$，使对任意的$t \in T$有$t_0 \le t$，即$t_0$是$T$中的最小自然数。
 \end{theorem}
 
-\begin{theorem}[最大自然数原理]
-设$M$是$N$的非空子集。若$M$有上界，即存在$a\in N$，使对任意的$m \in M$有$m \le a$，那么，必有$m_0 \in M$，使对任意的$m
-\in M$有$m \le m_0$，即$m_0$是$M$中的最大自然数。
+\begin{proof}
+	考虑由所有这样的自然数$s$组成的集合$S$：对任意的$t \in T$必有$s \le t$。由于$1$满足这样的条件，所以$1 \in
+		S$，$S$非空。此外，若$t_1 \in T$(因$T$非空所以必有$t_1$)，则$t_1 + 1 > t_1$，所以$t_1 + 1 \notin
+		S$。由这两点及归纳原理就推出：必有$s_0 \in S$使得$s_0 + 1 \notin S$(为什么)。我们来证明必有$s_0 \in
+		T$。因若不然，则对任意的$t \in T$必有$t>s_0$，因而$t \ge s_0 + 1$。这表明$s_0 + 1 \in S$，矛盾。取$t_0 =
+		s_0$就证明了定理\ref{thrm:minint}。
+\end{proof}
+
+\begin{theorem}[最大自然数原理]\label{thrm:maxint}
+	设$M$是$N$的非空子集。若$M$有上界，即存在$a\in N$，使对任意的$m \in M$有$m \le a$，那么，必有$m_0 \in M$，使对任意的$m
+		\in M$有$m \le m_0$，即$m_0$是$M$中的最大自然数。
 \end{theorem}
+
+\begin{proof}
+	考虑由所有这样的自然数$t$组成的集合$T$：对任意的$m \in M$有$m \le t$。由条件知$a \in
+	T$，所以$T$非空。由定理\ref{thrm:minint}知，集合$T$中有最小自然数$t_0$。我们来证明$t_0 \in
+	M$。若不然，则对任意的$m\in M$必有$m < t_0$，因而$m\le t_0 -1$。这样就推出$t_0 -1\in
+	T$，但这和$t_0$的最小性矛盾。取$m_0 = t_0$就证明了定理\ref{thrm:maxint}。
+\end{proof}
